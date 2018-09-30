@@ -2,9 +2,8 @@
 #define KALMAN_FILTER_H_
 #include "Eigen/Dense"
 
-class KalmanFilter
-{
-  public:
+class KalmanFilter {
+public:
     // state vector
     Eigen::VectorXd x_;
 

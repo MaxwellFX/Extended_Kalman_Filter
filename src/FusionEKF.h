@@ -9,8 +9,7 @@
 #include "kalman_filter.h"
 #include "tools.h"
 
-class FusionEKF
-{
+class FusionEKF {
   public:
     /**
   * Constructor.
@@ -45,6 +44,12 @@ class FusionEKF
     Eigen::MatrixXd R_radar_;
     Eigen::MatrixXd H_laser_;
     Eigen::MatrixXd Hj_;
+
+    // initial value for ekf object
+    Eigen::VectorXd x_init;
+    Eigen::MatrixXd P_init;
+    Eigen::MatrixXd F_init;
+    Eigen::MatrixXd Q_init;
 };
 
 #endif /* FusionEKF_H_ */
