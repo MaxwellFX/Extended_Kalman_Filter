@@ -33,27 +33,24 @@ Once the install for uWebSocketIO is complete, the main program can be built and
 The result is generated based on the given sample data `obj_pose-laser-radar-synthetic-input.txt`.
 
 For data set 1:
-<center>
 
-<img src = "./pictures/data1.png" alt = "data set 1 result" width = "400px">
+<img src = "./pictures/data1.PNG" alt = "data set 1 result" width = "400px">
 
 | `Data Set` | `RMSE X` | `RMSE Y` | `RMSE vx` | `RMSE vy` |
 |------------|----------|----------|-----------|-----------|
-| <center>`1`</center>| `0.0973` | `0.0855` | `0.4513`  | `0.4399`  |
-</center>
+| `1`        | `0.0973` | `0.0855` | `0.4513`  | `0.4399`  |
 
 For data set 2:
 
-<center><img src = "./pictures/data2.png" alt = "data set 2 result" width = "400px">
+<img src = "./pictures/data2.PNG" alt = "data set 2 result" width = "400px">
 
 | `Data Set` | `RMSE X` | `RMSE Y` | `RMSE vx` | `RMSE vy` |
 |------------|----------|----------|-----------|-----------|
-| <center>`2`</center>| `0.0726` | `0.0965` | `0.4219`  | `0.4937`  |
-</center>
+| `2`        | `0.0726` | `0.0965` | `0.4219`  | `0.4937`  |
 
 ## 2. Sensor Fusion Workflow:
 
-<center><img src = "./pictures/flow.png" alt = "Overview of process measurement" width = "600px"></center>
+<img src = "./pictures/flow.png" alt = "Overview of process measurement" width = "600px" class ="center">
 
 Every Lidar and radar measurement data are fed from the given txt file `obj_pose-laser-radar-synthetic-input.txt`, sent by the term 2 simulator through `uWebSocketIO`, which then received by `main.cpp`, and passed to `FusionEKF.ProcessMeasurement()`
 
@@ -157,15 +154,15 @@ cout << "P_ = " << ekf_.P_ << endl;
 </code></pre>
 
 The prediction and update functions were defined using the following formula:
-<center><img src = "./pictures/EKF generalization.jpg" alt = "EKF generalization" width = "600px"></center>
+<img src = "./pictures/EKF generalization.jpg" alt = "EKF generalization" width = "600px" class ="center">
 
 Where the update measurement matrix for lidar is defined by:
-<center><img src = "./pictures/H lidar.PNG" alt = "measurement matrix for lidar" width = "400px"></center>
+<img src = "./pictures/H lidar.PNG" alt = "measurement matrix for lidar" width = "400px" class ="center">
 <pre><code>H_laser_ << 1, 0, 0, 0,
             0, 1, 0, 0;</code></pre>
 
 and the update measurement matrix for radar is defined by:
-<center><img src = "./pictures/Jacobian for radar.PNG" alt = "measurement matrix for Radar" width = "400px"></center>
+<img src = "./pictures/Jacobian for radar.PNG" alt = "measurement matrix for Radar" width = "400px" class ="center" class ="center">
 
 <pre><code>
 MatrixXd Tools::CalculateJacobian(const VectorXd& x_state) {
@@ -203,7 +200,7 @@ MatrixXd Tools::CalculateJacobian(const VectorXd& x_state) {
 </code></pre>
 
 And finally, the performance was measured by the calculating the Root Mean Square Error between the predicted result and the ground truth:
-<center><img src = "./pictures/RMSE.PNG" alt = "Root Mean Square Error" width = "400px"></center>
+<img src = "./pictures/RMSE.PNG" alt = "Root Mean Square Error" width = "400px" class ="center">
 
 <pre><code>
 VectorXd Tools::CalculateRMSE(const vector<VectorXd> &estimations,

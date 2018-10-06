@@ -1,3 +1,0 @@
-/mnt/d/Coding/Udacity/T2/Extended_Kalman_Filter/build/CMakeFiles/rebuild_cache.dir
-/mnt/d/Coding/Udacity/T2/Extended_Kalman_Filter/build/CMakeFiles/ExtendedKF.dir
-/mnt/d/Coding/Udacity/T2/Extended_Kalman_Filter/build/CMakeFiles/edit_cache.dir
