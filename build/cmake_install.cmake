@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/c/WorkSpace/Coding/Udacity/T2/Extended_Kalman_Filter
+# Install script for directory: /mnt/d/Coding/Udacity/T2/Extended_Kalman_Filter
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/mnt/c/WorkSpace/Coding/Udacity/T2/Extended_Kalman_Filter/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/mnt/d/Coding/Udacity/T2/Extended_Kalman_Filter/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
