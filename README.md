@@ -135,6 +135,7 @@ ekf_.Predict();
 </code></pre>
 
 After the prediction, the algorithm will then update the measurement (line 189 of `FusionEKF.cpp`):
+
 <pre><code>if (measurement_pack.sensor_type_ == MeasurementPackage::RADAR) {
     // Radar updates
     Hj_ = tools.CalculateJacobian(ekf_.x_);
@@ -154,14 +155,17 @@ cout << "P_ = " << ekf_.P_ << endl;
 </code></pre>
 
 The prediction and update functions were defined using the following formula:
+
 <img src = "./pictures/EKF generalization.jpg" alt = "EKF generalization" width = "600px" class ="center">
 
 Where the update measurement matrix for lidar is defined by:
+
 <img src = "./pictures/H lidar.PNG" alt = "measurement matrix for lidar" width = "400px" class ="center">
 <pre><code>H_laser_ << 1, 0, 0, 0,
             0, 1, 0, 0;</code></pre>
 
 and the update measurement matrix for radar is defined by:
+
 <img src = "./pictures/Jacobian for radar.PNG" alt = "measurement matrix for Radar" width = "400px" class ="center" class ="center">
 
 <pre><code>
@@ -200,6 +204,7 @@ MatrixXd Tools::CalculateJacobian(const VectorXd& x_state) {
 </code></pre>
 
 And finally, the performance was measured by the calculating the Root Mean Square Error between the predicted result and the ground truth:
+
 <img src = "./pictures/RMSE.PNG" alt = "Root Mean Square Error" width = "400px" class ="center">
 
 <pre><code>
